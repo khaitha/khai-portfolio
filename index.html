@@ -4,179 +4,254 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Khai Tha — Digital Media Specialist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #0a0f1e;
-      --card: #0f172a;
-      --alt: #1e293b;
-      --indigo: #6366f1;
-      --teal: #06b6d4;
-      --text: #e2e8f0;
-      --muted: #94a3b8;
-      --dim: #475569;
-      --border: #1e293b;
+      --bg:     #0e0b09;
+      --card:   #161210;
+      --alt:    #221c18;
+      --purple: #9b7df0;
+      --gold:   #c8993a;
+      --teal:   #4ab8a8;
+      --text:   #f2ede6;
+      --muted:  #a8998a;
+      --dim:    #685848;
+      --border: #2a221c;
     }
     html { scroll-behavior: smooth; }
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-      line-height: 1.6;
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
     }
 
-    /* NAV */
+    /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
-      padding: 20px 60px;
-      background: rgba(10,15,30,0.88);
-      backdrop-filter: blur(14px);
+      padding: 22px 64px;
+      background: rgba(14,11,9,.9);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
     }
     .brand {
-      font-size: 13px; font-weight: 700; letter-spacing: 4px;
-      text-transform: uppercase; color: var(--text); text-decoration: none;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px; font-weight: 700;
+      color: var(--text); text-decoration: none;
+      letter-spacing: 0.5px;
     }
-    .nav-links { display: flex; gap: 40px; }
+    .nav-links { display: flex; gap: 44px; }
     .nav-links a {
-      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase;
       color: var(--muted); text-decoration: none; transition: color .2s;
     }
-    .nav-links a:hover { color: var(--indigo); }
+    .nav-links a:hover { color: var(--gold); }
 
-    /* HERO */
+    /* ── HERO ── */
     .hero {
       min-height: 100vh;
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 130px 60px 80px;
+      display: grid; grid-template-columns: 1fr 1fr; align-items: center;
+      gap: 60px; padding: 140px 64px 80px;
       position: relative; overflow: hidden;
     }
     .hero::before {
       content: '';
-      position: absolute; top: -180px; left: -180px;
-      width: 560px; height: 560px;
-      background: radial-gradient(circle, rgba(99,102,241,.09) 0%, transparent 70%);
+      position: absolute; top: -240px; left: -180px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(155,125,240,.07) 0%, transparent 65%);
       pointer-events: none;
     }
-    .hero::after {
-      content: '';
-      position: absolute; bottom: -100px; right: -100px;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(6,182,212,.05) 0%, transparent 70%);
-      pointer-events: none;
+    .hero-left {}
+    .hero-label {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 12px; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 28px;
     }
-    .badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 10px; letter-spacing: 5px; text-transform: uppercase;
-      color: var(--indigo); margin-bottom: 28px;
-    }
-    .badge::before { content: ''; width: 24px; height: 1px; background: var(--indigo); }
+    .hero-label::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
     h1 {
-      font-size: clamp(52px, 9vw, 100px);
-      font-weight: 800; letter-spacing: -3px; line-height: 1;
-      margin-bottom: 28px;
-      background: linear-gradient(135deg, var(--text) 0%, var(--muted) 100%);
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(60px, 8vw, 108px);
+      font-weight: 800; letter-spacing: -2px; line-height: 1;
+      margin-bottom: 28px; color: var(--text);
+    }
+    h1 em {
+      font-style: italic; font-weight: 700;
+      background: linear-gradient(120deg, var(--purple) 0%, var(--teal) 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
     .tagline {
-      font-size: 17px; color: var(--muted); max-width: 440px; margin-bottom: 44px; line-height: 1.7;
+      font-size: 18px; color: var(--muted); max-width: 440px;
+      margin-bottom: 44px; line-height: 1.75;
     }
-    .tags { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 60px; }
-    .tag {
-      padding: 5px 14px; border: 1px solid var(--border); border-radius: 20px;
-      font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim);
+    .hero-cta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .btn-primary {
+      padding: 14px 30px; background: var(--purple); color: white;
+      border-radius: 6px; font-size: 13px; font-weight: 500;
+      letter-spacing: 1px; text-transform: uppercase;
+      text-decoration: none; transition: background .2s, transform .15s;
     }
-    .scroll-hint {
-      display: flex; align-items: center; gap: 12px;
-      font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--dim);
+    .btn-primary:hover { background: #8060e0; transform: translateY(-2px); }
+    .btn-ghost {
+      font-size: 13px; color: var(--muted); text-decoration: none;
+      letter-spacing: 1px; display: flex; align-items: center; gap: 8px;
+      transition: color .2s;
     }
-    .scroll-hint::before { content: ''; width: 40px; height: 1px; background: var(--dim); }
+    .btn-ghost:hover { color: var(--text); }
+    .btn-ghost::after { content: '→'; }
 
-    /* SECTION BASE */
-    section { padding: 100px 60px; }
+    /* Hero right: skill tags stacked -->*/
+    .hero-right { display: flex; flex-direction: column; gap: 14px; }
+    .skill-card {
+      padding: 18px 24px;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 8px; display: flex; align-items: center; gap: 16px;
+    }
+    .skill-icon { font-size: 22px; width: 40px; text-align: center; }
+    .skill-info {}
+    .skill-name { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+    .skill-level {
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim);
+    }
+    .skill-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--purple); margin-left: auto; flex-shrink: 0;
+    }
+    .skill-dot.gold { background: var(--gold); }
+    .skill-dot.teal { background: var(--teal); }
+
+    /* ── SECTION BASE ── */
+    section { padding: 110px 64px; }
     .sec-label {
-      font-size: 10px; letter-spacing: 5px; text-transform: uppercase;
-      color: var(--indigo); margin-bottom: 10px;
+      font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 14px;
     }
     .sec-title {
-      font-size: 34px; font-weight: 700; letter-spacing: -1px; margin-bottom: 56px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 48px; font-weight: 800; letter-spacing: -1px;
+      line-height: 1.1; margin-bottom: 64px;
     }
+    .sec-title em { font-style: italic; color: var(--muted); font-weight: 700; }
 
-    /* WORK GRID */
+    /* ── WORK GRID ── */
     .work-grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-      gap: 20px;
+      gap: 22px;
     }
     .card {
-      background: var(--card); border: 1px solid var(--border); border-radius: 8px;
-      overflow: hidden; transition: transform .22s, border-color .22s;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden;
+      transition: transform .22s, border-color .22s, box-shadow .22s;
     }
-    .card:hover { transform: translateY(-5px); border-color: #6366f140; }
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--purple);
+      box-shadow: 0 20px 60px rgba(0,0,0,.4);
+    }
     .card-wide  { grid-column: span 7; }
     .card-tall  { grid-column: span 5; }
     .card-third { grid-column: span 4; }
-    .card img {
-      width: 100%; display: block; background: var(--alt);
-    }
-    .card-wide img  { aspect-ratio: 16/10; object-fit: cover; }
-    .card-tall img  { aspect-ratio: 3/4;  object-fit: cover; }
+    .card img { width: 100%; display: block; background: var(--alt); }
+    .card-wide  img { aspect-ratio: 16/10; object-fit: cover; }
+    .card-tall  img { aspect-ratio: 3/4;   object-fit: cover; }
     .card-third img { aspect-ratio: 16/10; object-fit: cover; }
-    .card-body { padding: 18px 22px 22px; }
+    .card-body { padding: 22px 26px 26px; }
     .card-cat {
-      font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
-      color: var(--indigo); margin-bottom: 5px;
+      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 8px;
     }
-    .card-name { font-size: 15px; font-weight: 600; margin-bottom: 5px; }
-    .card-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+    .card-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px; font-weight: 700;
+      line-height: 1.3; margin-bottom: 10px; color: var(--text);
+    }
+    .card-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
 
-    /* ABOUT */
+    /* ── ABOUT ── */
     .about { border-top: 1px solid var(--border); }
     .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+      display: grid; grid-template-columns: 3fr 2fr; gap: 80px; align-items: start;
     }
-    .about-text { font-size: 15px; color: var(--muted); line-height: 1.85; }
-    .about-text p { margin-bottom: 18px; }
-    .skills-label {
-      font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
-      color: var(--dim); margin-bottom: 28px;
+    .about-text {
+      font-size: 18px; color: var(--muted); line-height: 1.85;
     }
-    .skill { margin-bottom: 18px; }
-    .skill-row {
-      display: flex; justify-content: space-between;
-      font-size: 12px; color: var(--muted); margin-bottom: 7px;
+    .about-text p { margin-bottom: 22px; }
+    .about-text strong { color: var(--text); font-weight: 500; }
+    .about-text em { font-style: italic; color: var(--text); }
+
+    /* Skills sidebar */
+    .skills-block {}
+    .skills-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px; font-weight: 700; margin-bottom: 28px;
+      color: var(--text);
     }
-    .skill-pct { color: var(--indigo); font-weight: 600; }
-    .track {
-      height: 2px; background: var(--border); border-radius: 2px; overflow: hidden;
+    .skill-row-item { margin-bottom: 20px; }
+    .skill-row-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 8px;
     }
+    .skill-row-name { font-size: 14px; color: var(--text); font-weight: 500; }
+    .skill-row-pct { font-size: 13px; color: var(--purple); font-weight: 500; }
+    .track { height: 3px; background: var(--alt); border-radius: 3px; overflow: hidden; }
     .fill {
       height: 100%;
-      background: linear-gradient(90deg, var(--indigo), var(--teal));
-      border-radius: 2px;
+      background: linear-gradient(90deg, var(--purple), var(--teal));
+      border-radius: 3px;
     }
 
-    /* FOOTER */
+    /* ── QUOTE BAND ── */
+    .quote-band {
+      padding: 70px 64px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    .quote-band blockquote {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(22px, 3vw, 34px);
+      font-style: italic; font-weight: 400;
+      color: var(--muted); max-width: 680px; margin: 0 auto 18px;
+      line-height: 1.5;
+    }
+    .quote-band cite {
+      font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--dim); font-style: normal;
+    }
+
+    /* ── FOOTER ── */
     footer {
-      padding: 48px 60px; border-top: 1px solid var(--border);
+      padding: 52px 64px;
       display: flex; justify-content: space-between; align-items: center;
     }
-    .footer-name { font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; }
-    .footer-email { color: var(--muted); text-decoration: none; font-size: 13px; transition: color .2s; }
-    .footer-email:hover { color: var(--indigo); }
-    .footer-note { font-size: 11px; color: var(--dim); }
+    .footer-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 18px; font-weight: 700;
+    }
+    .footer-email {
+      color: var(--muted); text-decoration: none; font-size: 15px;
+      transition: color .2s;
+    }
+    .footer-email:hover { color: var(--gold); }
+    .footer-note { font-size: 12px; color: var(--dim); }
 
-    /* RESPONSIVE */
-    @media (max-width: 800px) {
-      nav { padding: 16px 24px; }
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 18px 28px; }
       .nav-links { display: none; }
-      .hero, section { padding: 80px 24px; }
-      .hero { padding-top: 110px; }
+      .hero { grid-template-columns: 1fr; padding: 110px 28px 60px; gap: 40px; }
+      .hero-right { display: none; }
+      section { padding: 80px 28px; }
+      .sec-title { font-size: 36px; }
       .card-wide, .card-tall, .card-third { grid-column: span 12; }
       .card-tall img { aspect-ratio: 16/10; }
-      .about-grid { grid-template-columns: 1fr; gap: 40px; }
-      footer { flex-direction: column; gap: 12px; text-align: center; padding: 36px 24px; }
+      .about-grid { grid-template-columns: 1fr; gap: 44px; }
+      footer { flex-direction: column; gap: 14px; text-align: center; padding: 40px 28px; }
     }
   </style>
 </head>
@@ -192,23 +267,54 @@
 </nav>
 
 <section class="hero">
-  <div class="badge">Digital Media Specialist</div>
-  <h1>Khai<br>Tha.</h1>
-  <p class="tagline">Vector illustration, icon design, and digital asset creation for interfaces and AI research applications.</p>
-  <div class="tags">
-    <span class="tag">Inkscape</span>
-    <span class="tag">GIMP</span>
-    <span class="tag">Krita</span>
-    <span class="tag">Blender</span>
-    <span class="tag">LibreSprite</span>
-    <span class="tag">Godot</span>
+  <div class="hero-left">
+    <div class="hero-label">Open to contract work</div>
+    <h1>Khai<br><em>Tha.</em></h1>
+    <p class="tagline">I make things look good. Vector illustration, character design, and hand-crafted digital artwork — built one bezier curve at a time.</p>
+    <div class="hero-cta">
+      <a href="#work" class="btn-primary">View Work</a>
+      <a href="mailto:xkhai09@gmail.com" class="btn-ghost">Get in touch</a>
+    </div>
   </div>
-  <div class="scroll-hint">Scroll to view work</div>
+  <div class="hero-right">
+    <div class="skill-card">
+      <div class="skill-icon">🌿</div>
+      <div class="skill-info">
+        <div class="skill-name">Inkscape</div>
+        <div class="skill-level">Vector illustration &amp; design</div>
+      </div>
+      <div class="skill-dot"></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🎨</div>
+      <div class="skill-info">
+        <div class="skill-name">GIMP &amp; Krita</div>
+        <div class="skill-level">Raster &amp; digital painting</div>
+      </div>
+      <div class="skill-dot gold"></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">🕹</div>
+      <div class="skill-info">
+        <div class="skill-name">LibreSprite</div>
+        <div class="skill-level">Pixel art &amp; sprite animation</div>
+      </div>
+      <div class="skill-dot teal"></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">📐</div>
+      <div class="skill-info">
+        <div class="skill-name">Blender</div>
+        <div class="skill-level">3D modelling &amp; rendering</div>
+      </div>
+      <div class="skill-dot"></div>
+    </div>
+  </div>
 </section>
 
 <section id="work">
-  <div class="sec-label">Portfolio</div>
-  <div class="sec-title">Selected Work</div>
+  <div class="sec-label">Selected Work</div>
+  <div class="sec-title">Things I've <em>made.</em></div>
   <div class="work-grid">
 
     <div class="card card-wide">
@@ -216,7 +322,7 @@
       <div class="card-body">
         <div class="card-cat">Vector Illustration</div>
         <div class="card-name">Dusk Study I — Mountain Landscape</div>
-        <div class="card-desc">Layered vector landscape with gradient sky, mountain silhouettes, and pine tree foreground.</div>
+        <div class="card-desc">Layered vector landscape with gradient sky, mountain silhouettes, and pine tree silhouettes in the foreground. Built from scratch in Inkscape.</div>
       </div>
     </div>
 
@@ -225,7 +331,7 @@
       <div class="card-body">
         <div class="card-cat">Botanical Illustration</div>
         <div class="card-name">Studio Plant No. 3</div>
-        <div class="card-desc">Flat vector illustration of desk plants — succulent rosette, cactus, and trailing stem in terracotta pots.</div>
+        <div class="card-desc">Flat vector illustration of desk plants — a succulent rosette, small cactus, and trailing stem, each in a terracotta pot.</div>
       </div>
     </div>
 
@@ -234,7 +340,7 @@
       <div class="card-body">
         <div class="card-cat">Badge Design</div>
         <div class="card-name">Heritage Badge Series</div>
-        <div class="card-desc">Four vintage-style stamp designs with circular text paths and hand-drawn inner motifs.</div>
+        <div class="card-desc">Four vintage-style stamp designs — mountain, botanical, coastal, and compass — with hand-crafted inner motifs and curved type.</div>
       </div>
     </div>
 
@@ -243,51 +349,71 @@
       <div class="card-body">
         <div class="card-cat">Surface Design</div>
         <div class="card-name">Botanical Pattern Study</div>
-        <div class="card-desc">Repeating botanical tile pattern using SVG pattern fills. Stem, leaf, and blossom motif.</div>
+        <div class="card-desc">Repeating stem-and-leaf tile pattern using SVG pattern fills. Each motif drawn by hand, tiled across a dark background.</div>
       </div>
     </div>
 
     <div class="card card-third">
-      <img src="assets/05-mascot.svg" alt="Character Design: Pixel">
+      <img src="assets/05-mascot.svg" alt="Pixel the Mascot">
       <div class="card-body">
         <div class="card-cat">Character Design</div>
-        <div class="card-name">Pixel — Mascot Illustration</div>
-        <div class="card-desc">Flat vector character design with expressive features, dynamic pose, and brand identity tag.</div>
+        <div class="card-name">Pixel — Mascot Character</div>
+        <div class="card-desc">Flat vector character design with expressive features and a waving pose. Created as a brand mascot concept.</div>
       </div>
     </div>
 
   </div>
 </section>
 
+<div class="quote-band">
+  <blockquote>"Good design is making something beautiful. Great design is making something that feels like it was made by a person."</blockquote>
+  <cite>On design philosophy</cite>
+</div>
+
 <section class="about" id="about">
-  <div class="sec-label">About</div>
-  <div class="sec-title">Background</div>
+  <div class="sec-label">About Me</div>
+  <div class="sec-title">The <em>person</em> behind the work.</div>
   <div class="about-grid">
     <div class="about-text">
-      <p>Digital media specialist focused on vector illustration, icon systems, and visual communication. Experienced creating assets for digital products, brand identities, and AI training datasets.</p>
-      <p>Proficient in open-source creative tools: Inkscape for vector work, GIMP for raster editing, Krita for digital painting, LibreSprite for pixel art animation, and Blender for 3D modelling.</p>
-      <p>Available for remote contract work — AI data creation, digital asset production, and visual design projects.</p>
+      <p>I'm a digital media specialist with a genuine love for the craft of vector illustration. There's something satisfying about pulling a bezier handle and watching a shape click into place — <strong>that's the part I actually enjoy</strong>.</p>
+      <p>My toolkit is mostly open-source: <em>Inkscape</em> for vector work, <em>GIMP</em> and <em>Krita</em> for raster and digital painting, <em>LibreSprite</em> for pixel art, and <em>Blender</em> when something needs a third dimension.</p>
+      <p>Right now I'm available for remote contract work — especially projects involving <strong>AI training assets</strong>, digital illustration, and character design.</p>
     </div>
-    <div>
-      <div class="skills-label">Tool Proficiency</div>
-      <div class="skill">
-        <div class="skill-row"><span>Inkscape</span><span class="skill-pct">95%</span></div>
+    <div class="skills-block">
+      <div class="skills-heading">Tools &amp; Proficiency</div>
+      <div class="skill-row-item">
+        <div class="skill-row-header">
+          <span class="skill-row-name">Inkscape</span>
+          <span class="skill-row-pct">95%</span>
+        </div>
         <div class="track"><div class="fill" style="width:95%"></div></div>
       </div>
-      <div class="skill">
-        <div class="skill-row"><span>GIMP</span><span class="skill-pct">85%</span></div>
+      <div class="skill-row-item">
+        <div class="skill-row-header">
+          <span class="skill-row-name">GIMP</span>
+          <span class="skill-row-pct">85%</span>
+        </div>
         <div class="track"><div class="fill" style="width:85%"></div></div>
       </div>
-      <div class="skill">
-        <div class="skill-row"><span>Krita</span><span class="skill-pct">80%</span></div>
+      <div class="skill-row-item">
+        <div class="skill-row-header">
+          <span class="skill-row-name">Krita</span>
+          <span class="skill-row-pct">80%</span>
+        </div>
         <div class="track"><div class="fill" style="width:80%"></div></div>
       </div>
-      <div class="skill">
-        <div class="skill-row"><span>LibreSprite</span><span class="skill-pct">75%</span></div>
+      <div class="skill-row-item">
+        <div class="skill-row-header">
+          <span class="skill-row-name">LibreSprite</span>
+          <span class="skill-row-pct">75%</span>
+        </div>
         <div class="track"><div class="fill" style="width:75%"></div></div>
       </div>
-      <div class="skill">
-        <div class="skill-row"><span>Blender</span><span class="skill-pct">70%</span></div>
+      <div class="skill-row-item">
+        <div class="skill-row-header">
+          <span class="skill-row-name">Blender</span>
+          <span class="skill-row-pct">70%</span>
+        </div>
         <div class="track"><div class="fill" style="width:70%"></div></div>
       </div>
     </div>
