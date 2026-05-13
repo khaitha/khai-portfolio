@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#f0e8f8"/>
+      <stop offset="100%" stop-color="#ddd0ec"/>
+    </radialGradient>
+    <radialGradient id="faceglow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#fff0f8"/>
+      <stop offset="100%" stop-color="#f0c8e0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- Subtle polka dots in background -->
+  <circle cx="80"  cy="60"  r="4" fill="#d4c0e4" fill-opacity="0.5"/>
+  <circle cx="200" cy="30"  r="3" fill="#d4c0e4" fill-opacity="0.4"/>
+  <circle cx="350" cy="55"  r="5" fill="#d4c0e4" fill-opacity="0.4"/>
+  <circle cx="500" cy="25"  r="3" fill="#d4c0e4" fill-opacity="0.5"/>
+  <circle cx="660" cy="48"  r="4" fill="#d4c0e4" fill-opacity="0.4"/>
+  <circle cx="740" cy="80"  r="3" fill="#d4c0e4" fill-opacity="0.5"/>
+  <circle cx="100" cy="440" r="4" fill="#d4c0e4" fill-opacity="0.4"/>
+  <circle cx="680" cy="455" r="3" fill="#d4c0e4" fill-opacity="0.5"/>
+  <circle cx="760" cy="420" r="5" fill="#d4c0e4" fill-opacity="0.4"/>
+  <circle cx="40"  cy="380" r="3" fill="#d4c0e4" fill-opacity="0.4"/>
+
+  <!-- Shadow under character -->
+  <ellipse cx="400" cy="448" rx="88" ry="14" fill="#c0a8d8" fill-opacity="0.35"/>
+
+  <!-- BODY -->
+  <rect x="342" y="360" width="116" height="82" rx="22" fill="#6344a8"/>
+  <!-- Shirt pocket -->
+  <rect x="358" y="374" width="28" height="22" rx="4" fill="#7c5cc0" stroke="#5a3a98" stroke-width="1"/>
+  <line x1="372" y1="374" x2="372" y2="396" stroke="#5a3a98" stroke-width="1"/>
+  <!-- Shirt collar/neck -->
+  <path d="M 380,362 L 370,340 L 400,348 L 430,340 L 420,362" fill="#6344a8"/>
+  <!-- Buttons -->
+  <circle cx="400" cy="388" r="3" fill="#5a3a98"/>
+  <circle cx="400" cy="402" r="3" fill="#5a3a98"/>
+  <circle cx="400" cy="416" r="3" fill="#5a3a98"/>
+
+  <!-- LEFT ARM -->
+  <rect x="298" y="366" width="48" height="28" rx="14" fill="#6344a8"/>
+  <!-- Left hand -->
+  <circle cx="292" cy="380" r="18" fill="#f4c09a"/>
+  <!-- Hand fingers (simple) -->
+  <ellipse cx="278" cy="368" rx="6" ry="10" fill="#f4c09a" transform="rotate(-20,278,368)"/>
+  <ellipse cx="270" cy="374" rx="6" ry="10" fill="#f4c09a" transform="rotate(-35,270,374)"/>
+  <ellipse cx="268" cy="385" rx="6" ry="9"  fill="#f4c09a" transform="rotate(-50,268,385)"/>
+
+  <!-- RIGHT ARM (waving) -->
+  <path d="M 458,372 C 478,358 498,340 512,322" stroke="#6344a8" stroke-width="28" stroke-linecap="round" fill="none"/>
+  <!-- Right hand -->
+  <circle cx="520" cy="314" r="18" fill="#f4c09a"/>
+  <!-- Waving fingers -->
+  <ellipse cx="534" cy="302" rx="6" ry="10" fill="#f4c09a" transform="rotate(20,534,302)"/>
+  <ellipse cx="540" cy="312" rx="6" ry="10" fill="#f4c09a" transform="rotate(5,540,312)"/>
+  <ellipse cx="538" cy="325" rx="6" ry="9"  fill="#f4c09a" transform="rotate(-10,538,325)"/>
+
+  <!-- NECK -->
+  <rect x="386" y="332" width="28" height="20" rx="6" fill="#f4c09a"/>
+
+  <!-- HEAD (slightly tilted, friendly) -->
+  <ellipse cx="402" cy="270" rx="80" ry="78" fill="url(#faceglow)" stroke="#e8b09a" stroke-width="1.5"/>
+
+  <!-- HAIR -->
+  <path d="M 330,250 C 328,200 345,162 400,158 C 455,162 474,200 474,250" fill="#2a1a0a"/>
+  <path d="M 330,250 C 326,262 326,272 330,280" stroke="#2a1a0a" stroke-width="16" stroke-linecap="round" fill="none"/>
+  <path d="M 474,250 C 478,262 478,272 474,280" stroke="#2a1a0a" stroke-width="16" stroke-linecap="round" fill="none"/>
+  <!-- Hair curl/tuft -->
+  <path d="M 400,162 C 394,148 400,138 408,144 C 414,150 410,162 400,162" fill="#2a1a0a"/>
+
+  <!-- EARS -->
+  <ellipse cx="324" cy="278" rx="14" ry="18" fill="#f4c09a"/>
+  <ellipse cx="480" cy="278" rx="14" ry="18" fill="#f4c09a"/>
+  <!-- Inner ear -->
+  <ellipse cx="324" cy="278" rx="7"  ry="10" fill="#e8a888"/>
+  <ellipse cx="480" cy="278" rx="7"  ry="10" fill="#e8a888"/>
+
+  <!-- EYES (large, expressive) -->
+  <!-- Left eye -->
+  <ellipse cx="374" cy="268" rx="20" ry="22" fill="white"/>
+  <circle cx="376" cy="268" r="13" fill="#3a2060"/>
+  <circle cx="380" cy="264" r="6" fill="#1a0840"/>
+  <circle cx="386" cy="260" r="4" fill="white" fill-opacity="0.85"/>
+  <circle cx="374" cy="275" r="2" fill="white" fill-opacity="0.5"/>
+  <!-- Left eyelashes -->
+  <line x1="358" y1="256" x2="354" y2="250" stroke="#2a1a0a" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="366" y1="250" x2="364" y2="244" stroke="#2a1a0a" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="375" y1="248" x2="374" y2="242" stroke="#2a1a0a" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="384" y1="250" x2="385" y2="244" stroke="#2a1a0a" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Left eyebrow -->
+  <path d="M 356,244 C 366,238 380,238 390,243" stroke="#2a1a0a" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- Right eye -->
+  <ellipse cx="430" cy="268" rx="20" ry="22" fill="white"/>
+  <circle cx="428" cy="268" r="13" fill="#3a2060"/>
+  <circle cx="424" cy="264" r="6" fill="#1a0840"/>
+  <circle cx="418" cy="260" r="4" fill="white" fill-opacity="0.85"/>
+  <circle cx="430" cy="275" r="2" fill="white" fill-opacity="0.5"/>
+  <!-- Right eyelashes -->
+  <line x1="446" y1="256" x2="450" y2="250" stroke="#2a1a0a" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="438" y1="250" x2="440" y2="244" stroke="#2a1a0a" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="429" y1="248" x2="430" y2="242" stroke="#2a1a0a" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="420" y1="250" x2="419" y2="244" stroke="#2a1a0a" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Right eyebrow -->
+  <path d="M 414,243 C 424,238 438,238 448,244" stroke="#2a1a0a" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- NOSE (small button) -->
+  <path d="M 398,290 C 395,298 390,304 388,308 C 393,314 411,314 416,308 C 414,304 409,298 406,290" fill="#e8a080"/>
+  <ellipse cx="394" cy="308" rx="5" ry="3.5" fill="#e0907a"/>
+  <ellipse cx="410" cy="308" rx="5" ry="3.5" fill="#e0907a"/>
+
+  <!-- MOUTH (big smile) -->
+  <path d="M 372,328 C 382,344 420,344 432,328" stroke="#2a1a0a" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Teeth -->
+  <path d="M 373,328 C 382,338 420,338 431,328 C 424,332 380,332 373,328 Z" fill="white"/>
+  <!-- Cheeks -->
+  <ellipse cx="350" cy="308" rx="20" ry="12" fill="#f0a090" fill-opacity="0.35"/>
+  <ellipse cx="454" cy="308" rx="20" ry="12" fill="#f0a090" fill-opacity="0.35"/>
+
+  <!-- EARRINGS -->
+  <circle cx="324" cy="292" r="5" fill="#c8a030"/>
+  <circle cx="480" cy="292" r="5" fill="#c8a030"/>
+
+  <!-- NAME TAG floating -->
+  <rect x="530" y="240" width="140" height="70" rx="8" fill="white" stroke="#d4c0e4" stroke-width="1.5"/>
+  <line x1="530" y1="262" x2="670" y2="262" stroke="#e0d0f0" stroke-width="1"/>
+  <text x="600" y="256" font-family="Arial" font-size="9" fill="#9a7ab8" text-anchor="middle" letter-spacing="3" font-weight="bold">HELLO</text>
+  <text x="600" y="282" font-family="Georgia,serif" font-size="15" fill="#3a2060" text-anchor="middle" font-weight="bold">Pixel</text>
+  <text x="600" y="298" font-family="Arial" font-size="8" fill="#b8a0d0" text-anchor="middle" letter-spacing="2">MASCOT CHARACTER</text>
+  <!-- Tag string -->
+  <line x1="600" y1="240" x2="540" y2="204" stroke="#d4c0e4" stroke-width="1.5" stroke-dasharray="3 2"/>
+
+  <!-- Stars/sparkles around character -->
+  <path d="M 160,160 L 163,152 L 166,160 L 174,163 L 166,166 L 163,174 L 160,166 L 152,163 Z" fill="#c8a030" fill-opacity="0.7"/>
+  <path d="M 620,180 L 622,175 L 624,180 L 629,182 L 624,184 L 622,189 L 620,184 L 615,182 Z" fill="#9a6ac8" fill-opacity="0.7"/>
+  <path d="M 140,330 L 142,326 L 144,330 L 148,332 L 144,334 L 142,338 L 140,334 L 136,332 Z" fill="#6ab8c8" fill-opacity="0.7"/>
+
+  <!-- Caption -->
+  <text x="36"  y="486" font-family="Georgia,serif" font-size="10" fill="#7050a0" font-style="italic" letter-spacing="1">Character Design: Pixel — Mascot Illustration</text>
+  <text x="764" y="486" font-family="Georgia,serif" font-size="10" fill="#7050a0" text-anchor="end" font-style="italic" letter-spacing="1">Khai Tha, 2024</text>
+</svg>

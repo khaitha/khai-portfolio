@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0d0429"/>
+      <stop offset="30%" stop-color="#5a1090"/>
+      <stop offset="58%" stop-color="#be185d"/>
+      <stop offset="80%" stop-color="#e8561c"/>
+      <stop offset="100%" stop-color="#f5bc3c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#sky)"/>
+  <ellipse cx="400" cy="345" rx="135" ry="88" fill="url(#glow)"/>
+  <circle cx="400" cy="350" r="34" fill="#fef9c3" opacity="0.95"/>
+  <circle cx="400" cy="350" r="26" fill="#fde68a"/>
+
+  <!-- Stars -->
+  <circle cx="72"  cy="42"  r="1.4" fill="white" opacity="0.7"/>
+  <circle cx="154" cy="76"  r="1"   fill="white" opacity="0.6"/>
+  <circle cx="238" cy="33"  r="1.6" fill="white" opacity="0.8"/>
+  <circle cx="308" cy="63"  r="0.9" fill="white" opacity="0.55"/>
+  <circle cx="490" cy="50"  r="1.2" fill="white" opacity="0.7"/>
+  <circle cx="566" cy="27"  r="1"   fill="white" opacity="0.6"/>
+  <circle cx="648" cy="68"  r="1.5" fill="white" opacity="0.8"/>
+  <circle cx="724" cy="38"  r="0.9" fill="white" opacity="0.6"/>
+  <circle cx="43"  cy="108" r="0.8" fill="white" opacity="0.5"/>
+  <circle cx="708" cy="95"  r="0.8" fill="white" opacity="0.5"/>
+  <circle cx="176" cy="128" r="1"   fill="white" opacity="0.45"/>
+  <circle cx="620" cy="110" r="1"   fill="white" opacity="0.45"/>
+  <circle cx="285" cy="95"  r="0.8" fill="white" opacity="0.5"/>
+  <circle cx="520" cy="82"  r="0.7" fill="white" opacity="0.45"/>
+
+  <!-- Far mountains -->
+  <polygon points="-10,500 -10,385 30,360 80,345 130,325 185,310 240,296 300,280 360,268 400,260 445,263 490,272 545,288 600,305 650,318 710,330 760,342 810,350 810,500" fill="#3b0764" opacity="0.85"/>
+
+  <!-- Mid mountains -->
+  <polygon points="-10,500 -10,440 35,420 90,408 145,416 190,400 245,390 300,380 355,370 395,360 440,358 485,365 530,375 580,385 630,395 680,400 740,392 810,398 810,500" fill="#1e0840" opacity="0.9"/>
+
+  <!-- Near hills -->
+  <polygon points="-10,500 -10,468 30,456 80,448 140,445 200,452 260,446 320,440 380,445 430,440 490,444 545,448 600,452 660,445 720,450 760,455 810,462 810,500" fill="#0d0520"/>
+
+  <rect x="-10" y="480" width="820" height="25" fill="#080210"/>
+
+  <!-- Left trees -->
+  <polygon points="38,478 55,430 72,478"  fill="#04010c"/>
+  <polygon points="38,456 55,412 72,456"  fill="#04010c"/>
+  <polygon points="62,478 77,438 92,478"  fill="#04010c"/>
+  <polygon points="62,460 77,420 92,460"  fill="#04010c"/>
+  <polygon points="84,478 97,445 110,478" fill="#04010c"/>
+  <polygon points="84,462 97,428 110,462" fill="#04010c"/>
+
+  <!-- Right trees -->
+  <polygon points="692,478 710,428 728,478" fill="#04010c"/>
+  <polygon points="692,456 710,410 728,456" fill="#04010c"/>
+  <polygon points="718,478 734,436 750,478" fill="#04010c"/>
+  <polygon points="718,458 734,420 750,458" fill="#04010c"/>
+  <polygon points="742,478 756,444 770,478" fill="#04010c"/>
+  <polygon points="742,460 756,427 770,460" fill="#04010c"/>
+
+  <!-- Water reflection -->
+  <rect x="0" y="488" width="800" height="12" fill="#1a0840" opacity="0.8"/>
+  <line x1="336" y1="491" x2="464" y2="491" stroke="#fde68a" stroke-width="1.2" opacity="0.4"/>
+  <line x1="355" y1="496" x2="445" y2="496" stroke="#fde68a" stroke-width="0.8" opacity="0.25"/>
+
+  <text x="32"  y="492" font-family="Georgia,serif" font-size="9" fill="#2d1b4e" letter-spacing="2" font-style="italic">Dusk Study I — Vector Landscape</text>
+  <text x="768" y="492" font-family="Georgia,serif" font-size="9" fill="#2d1b4e" text-anchor="end" letter-spacing="1" font-style="italic">Khai Tha, 2024</text>
+</svg>
