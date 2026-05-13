@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khai Tha — Digital Media Specialist</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0f1e;
+      --card: #0f172a;
+      --alt: #1e293b;
+      --indigo: #6366f1;
+      --teal: #06b6d4;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --dim: #475569;
+      --border: #1e293b;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 60px;
+      background: rgba(10,15,30,0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+    .brand {
+      font-size: 13px; font-weight: 700; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--text); text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 40px; }
+    .nav-links a {
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted); text-decoration: none; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--indigo); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 130px 60px 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -180px; left: -180px;
+      width: 560px; height: 560px;
+      background: radial-gradient(circle, rgba(99,102,241,.09) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: -100px; right: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(6,182,212,.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 10px; letter-spacing: 5px; text-transform: uppercase;
+      color: var(--indigo); margin-bottom: 28px;
+    }
+    .badge::before { content: ''; width: 24px; height: 1px; background: var(--indigo); }
+    h1 {
+      font-size: clamp(52px, 9vw, 100px);
+      font-weight: 800; letter-spacing: -3px; line-height: 1;
+      margin-bottom: 28px;
+      background: linear-gradient(135deg, var(--text) 0%, var(--muted) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .tagline {
+      font-size: 17px; color: var(--muted); max-width: 440px; margin-bottom: 44px; line-height: 1.7;
+    }
+    .tags { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 60px; }
+    .tag {
+      padding: 5px 14px; border: 1px solid var(--border); border-radius: 20px;
+      font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--dim);
+    }
+    .scroll-hint {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--dim);
+    }
+    .scroll-hint::before { content: ''; width: 40px; height: 1px; background: var(--dim); }
+
+    /* SECTION BASE */
+    section { padding: 100px 60px; }
+    .sec-label {
+      font-size: 10px; letter-spacing: 5px; text-transform: uppercase;
+      color: var(--indigo); margin-bottom: 10px;
+    }
+    .sec-title {
+      font-size: 34px; font-weight: 700; letter-spacing: -1px; margin-bottom: 56px;
+    }
+
+    /* WORK GRID */
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+      overflow: hidden; transition: transform .22s, border-color .22s;
+    }
+    .card:hover { transform: translateY(-5px); border-color: #6366f140; }
+    .card-wide  { grid-column: span 7; }
+    .card-tall  { grid-column: span 5; }
+    .card-third { grid-column: span 4; }
+    .card img {
+      width: 100%; display: block; background: var(--alt);
+    }
+    .card-wide img  { aspect-ratio: 16/10; object-fit: cover; }
+    .card-tall img  { aspect-ratio: 3/4;  object-fit: cover; }
+    .card-third img { aspect-ratio: 16/10; object-fit: cover; }
+    .card-body { padding: 18px 22px 22px; }
+    .card-cat {
+      font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--indigo); margin-bottom: 5px;
+    }
+    .card-name { font-size: 15px; font-weight: 600; margin-bottom: 5px; }
+    .card-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+    /* ABOUT */
+    .about { border-top: 1px solid var(--border); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+    }
+    .about-text { font-size: 15px; color: var(--muted); line-height: 1.85; }
+    .about-text p { margin-bottom: 18px; }
+    .skills-label {
+      font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--dim); margin-bottom: 28px;
+    }
+    .skill { margin-bottom: 18px; }
+    .skill-row {
+      display: flex; justify-content: space-between;
+      font-size: 12px; color: var(--muted); margin-bottom: 7px;
+    }
+    .skill-pct { color: var(--indigo); font-weight: 600; }
+    .track {
+      height: 2px; background: var(--border); border-radius: 2px; overflow: hidden;
+    }
+    .fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--indigo), var(--teal));
+      border-radius: 2px;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 48px 60px; border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-name { font-size: 13px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; }
+    .footer-email { color: var(--muted); text-decoration: none; font-size: 13px; transition: color .2s; }
+    .footer-email:hover { color: var(--indigo); }
+    .footer-note { font-size: 11px; color: var(--dim); }
+
+    /* RESPONSIVE */
+    @media (max-width: 800px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .hero, section { padding: 80px 24px; }
+      .hero { padding-top: 110px; }
+      .card-wide, .card-tall, .card-third { grid-column: span 12; }
+      .card-tall img { aspect-ratio: 16/10; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      footer { flex-direction: column; gap: 12px; text-align: center; padding: 36px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="brand">Khai Tha</a>
+  <div class="nav-links">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="mailto:xkhai09@gmail.com">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="badge">Digital Media Specialist</div>
+  <h1>Khai<br>Tha.</h1>
+  <p class="tagline">Vector illustration, icon design, and digital asset creation for interfaces and AI research applications.</p>
+  <div class="tags">
+    <span class="tag">Inkscape</span>
+    <span class="tag">GIMP</span>
+    <span class="tag">Krita</span>
+    <span class="tag">Blender</span>
+    <span class="tag">LibreSprite</span>
+    <span class="tag">Godot</span>
+  </div>
+  <div class="scroll-hint">Scroll to view work</div>
+</section>
+
+<section id="work">
+  <div class="sec-label">Portfolio</div>
+  <div class="sec-title">Selected Work</div>
+  <div class="work-grid">
+
+    <div class="card card-wide">
+      <img src="assets/01-icon-set.svg" alt="Digital Interface Icon Set">
+      <div class="card-body">
+        <div class="card-cat">Vector Icons</div>
+        <div class="card-name">Digital Interface Icon Set</div>
+        <div class="card-desc">Six-icon set for digital interfaces — stroke-based, consistent visual weight, infinitely scalable.</div>
+      </div>
+    </div>
+
+    <div class="card card-tall">
+      <img src="assets/05-poster.svg" alt="Vector Design Poster">
+      <div class="card-body">
+        <div class="card-cat">Print Design</div>
+        <div class="card-name">Vector Design Studio — Series 01</div>
+        <div class="card-desc">Minimalist typographic poster with geometric construction and gradient fills.</div>
+      </div>
+    </div>
+
+    <div class="card card-third">
+      <img src="assets/02-logo-design.svg" alt="KT Brand Identity">
+      <div class="card-body">
+        <div class="card-cat">Brand Design</div>
+        <div class="card-name">KT Brand Identity</div>
+        <div class="card-desc">Geometric monogram built on a visible construction grid.</div>
+      </div>
+    </div>
+
+    <div class="card card-third">
+      <img src="assets/03-geometric-art.svg" alt="Abstract Composition">
+      <div class="card-body">
+        <div class="card-cat">Digital Illustration</div>
+        <div class="card-name">Abstract Composition No. 01</div>
+        <div class="card-desc">Layered geometric forms exploring colour relationships and negative space.</div>
+      </div>
+    </div>
+
+    <div class="card card-third">
+      <img src="assets/04-infographic.svg" alt="Data Visualization">
+      <div class="card-body">
+        <div class="card-cat">Data Visualization</div>
+        <div class="card-name">Tool Proficiency Chart</div>
+        <div class="card-desc">Clean infographic layout combining bar charts and circular progress indicators.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="sec-label">About</div>
+  <div class="sec-title">Background</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>Digital media specialist focused on vector illustration, icon systems, and visual communication. Experienced creating assets for digital products, brand identities, and AI training datasets.</p>
+      <p>Proficient in open-source creative tools: Inkscape for vector work, GIMP for raster editing, Krita for digital painting, LibreSprite for pixel art animation, and Blender for 3D modelling.</p>
+      <p>Available for remote contract work — AI data creation, digital asset production, and visual design projects.</p>
+    </div>
+    <div>
+      <div class="skills-label">Tool Proficiency</div>
+      <div class="skill">
+        <div class="skill-row"><span>Inkscape</span><span class="skill-pct">95%</span></div>
+        <div class="track"><div class="fill" style="width:95%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-row"><span>GIMP</span><span class="skill-pct">85%</span></div>
+        <div class="track"><div class="fill" style="width:85%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-row"><span>Krita</span><span class="skill-pct">80%</span></div>
+        <div class="track"><div class="fill" style="width:80%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-row"><span>LibreSprite</span><span class="skill-pct">75%</span></div>
+        <div class="track"><div class="fill" style="width:75%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-row"><span>Blender</span><span class="skill-pct">70%</span></div>
+        <div class="track"><div class="fill" style="width:70%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name">Khai Tha</div>
+  <a href="mailto:xkhai09@gmail.com" class="footer-email">xkhai09@gmail.com</a>
+  <div class="footer-note">© 2024 · Digital Media Specialist</div>
+</footer>
+
+</body>
+</html>
